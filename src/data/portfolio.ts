@@ -1,5 +1,7 @@
 export type Palette = { from: string; via: string; to: string; accent: string };
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}assets/${path}`;
+
 export const profile = {
   fullName: 'Amalapurapu Praneeth Mohan',
   displayName: 'Amalapurapu Praneeth Mohan',
@@ -20,8 +22,8 @@ export const profile = {
   },
   resumePdf: '',
   portrait: {
-    src: '/assets/portrait-720.webp',
-    srcSet: '/assets/portrait-420.webp 420w, /assets/portrait-720.webp 720w, /assets/portrait-1100.webp 1100w',
+    src: asset('portrait-720.webp'),
+    srcSet: `${asset('portrait-420.webp')} 420w, ${asset('portrait-720.webp')} 720w, ${asset('portrait-1100.webp')} 1100w`,
     alt: 'Portrait of Amalapurapu Praneeth Mohan',
   },
   interests: ['Clinical Informatics', 'Pharmacovigilance', 'Healthcare AI', 'Regulatory Affairs'],
@@ -140,7 +142,7 @@ export const projects: Project[] = [
     year: '2026',
     genre: 'HealthTech • Clinical Informatics • AI',
     logline: 'An AI-driven desktop and mobile clinical health application focused on medication safety and pharmacovigilance.',
-    logo: '/assets/mediguard.png',
+   logo: asset('mediguard.png'),
     stack: ['Python', 'Electron', 'JavaScript', 'TypeScript', 'Cloudflare', 'Firebase', 'AI APIs', 'HTML', 'CSS'],
     build: [
       'Developed MediGuard AI v1.0 and v2.0 to bring real-time patient health assistance and medication-safety workflows to desktop and mobile users.',
@@ -215,7 +217,7 @@ export const projects: Project[] = [
     year: '2026',
     genre: 'Vehicular Safety • Edge AI • Mobile Safety Systems',
     logline: 'A driver-safety application concept combining phone sensors, camera-based fatigue checks, and context-aware alerts.',
-    logo: '/assets/driveshield.png',
+    logo: asset('driveshield.png'),
     stack: ['Android Native (Java/Kotlin)', 'Accelerometer & Gyroscope', 'GPS Geofencing', 'Driver-Facing Camera', 'Real-Time Alerts'],
     build: [
       'Designed a mobile driver-safety concept using device sensors, location, and driver-facing camera signals.',
@@ -324,7 +326,7 @@ export const projects: Project[] = [
     year: '2025',
     genre: 'Pharmacy • Herbal Product',
     logline: 'A first-prize-winning herbal syrup formulation project presented in February 2025.',
-    logo: '/assets/raktavridhi.jpg',
+    logo: asset('raktavridhi.jpg'),
     stack: ['Pharmacy', 'Herbal Formulation', 'Herbal Syrup'],
     build: [
       'Product: Raktavridhi Herbal Syrup.',
